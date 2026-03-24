@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito_Sans } from "next/font/google";
 import "./globals.css";
+import { siteConfig } from "../lib/site";
 
 const nunitoSans = Nunito_Sans({
   variable: "--font-nunito",
@@ -8,9 +9,24 @@ const nunitoSans = Nunito_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "togethur | Small wins together",
-  description:
-    "togethur helps friends, partners, and accountability buddies build short streaks and celebrate small wins together.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: "togethur | Small wins together",
+    template: "%s | togethur",
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    siteName: siteConfig.name,
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+  },
 };
 
 export default function RootLayout({

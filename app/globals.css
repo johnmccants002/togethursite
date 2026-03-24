@@ -75,6 +75,11 @@ button {
   backdrop-filter: blur(16px);
 }
 
+.editorial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 34px 88px rgba(42, 26, 74, 0.12);
+}
+
 .button-soft:hover {
   transform: translateY(-2px);
 }
@@ -85,6 +90,20 @@ button {
 
 .hero-title {
   text-wrap: balance;
+}
+
+.input-soft {
+  border: 1px solid var(--tog-border);
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 18px 44px rgba(42, 26, 74, 0.08);
+}
+
+.input-soft:focus {
+  outline: none;
+  border-color: rgba(93, 89, 245, 0.26);
+  box-shadow:
+    0 0 0 4px rgba(93, 89, 245, 0.16),
+    0 18px 44px rgba(42, 26, 74, 0.08);
 }
 
 .blob {
@@ -131,6 +150,14 @@ button {
 
 .reveal-delay-4 {
   animation-delay: 320ms;
+}
+
+.reveal-delay-5 {
+  animation-delay: 400ms;
+}
+
+.reveal-delay-6 {
+  animation-delay: 480ms;
 }
 
 @keyframes revealUp {

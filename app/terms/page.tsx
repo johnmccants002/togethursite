@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { createMetadata } from "../../lib/seo";
 
 const serviceItems = [
   "Create and track personal or shared streaks",
@@ -112,11 +113,12 @@ function BulletList({ items }: { items: string[] }) {
   );
 }
 
-export const metadata: Metadata = {
-  title: "Terms and Conditions | togethur",
+export const metadata: Metadata = createMetadata({
+  title: "Terms and Conditions",
   description:
     "Read the Terms and Conditions for togethur, including eligibility, acceptable use, disclaimers, and legal terms.",
-};
+  pathname: "/terms",
+});
 
 export default function TermsPage() {
   return (

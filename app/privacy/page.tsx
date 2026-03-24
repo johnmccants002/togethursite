@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { createMetadata } from "../../lib/seo";
 
 const informationCollected = [
   {
@@ -135,11 +136,12 @@ function BulletList({ items }: { items: string[] }) {
   );
 }
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | togethur",
+export const metadata: Metadata = createMetadata({
+  title: "Privacy Policy",
   description:
     "Read the privacy policy for togethur, including what information is collected, how it is used, and your choices.",
-};
+  pathname: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (
